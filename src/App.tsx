@@ -10,6 +10,7 @@ import { PageSkeleton } from "@/components/ui/PageSkeleton";
 import { ErrorBoundary } from "@/components/error/ErrorBoundary";
 import { getErrorMessage, shouldRetry } from "@/utils/errorUtils";
 import { toast } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 // Lazy load all route components for better code splitting
 const Login = lazy(() => import("@/pages/Login"));
@@ -57,6 +58,7 @@ const App = () => (
           <TooltipProvider>
             <Toaster />
             <Sonner />
+            <Analytics />
             <BrowserRouter>
               <Suspense fallback={<PageSkeleton />}>
                 <Routes>
