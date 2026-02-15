@@ -17,7 +17,7 @@
     --popover-foreground: 0 0% 10%;
 
     --primary: 28 100% 50%; /* #FF7700 ArtStone Orange */
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 10%; /* Dark text for better contrast on orange */
 
     --secondary: 0 0% 94%;
     --secondary-foreground: 0 0% 10%;
@@ -59,7 +59,7 @@
     --popover-foreground: 0 0% 98%;
 
     --primary: 28 100% 50%; /* #FF7700 */
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 0 0% 10%; /* Dark text for better contrast on orange */
 
     --secondary: 0 0% 16%;
     --secondary-foreground: 0 0% 98%;

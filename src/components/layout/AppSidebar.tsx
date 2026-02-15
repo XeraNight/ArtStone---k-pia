@@ -132,6 +132,7 @@ export function AppSidebar() {
           size="icon-sm"
           onClick={() => setCollapsed(!collapsed)}
           className="text-sidebar-muted-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent"
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
           {collapsed ? (
             <ChevronRight className="h-4 w-4" />
@@ -203,6 +204,7 @@ export function AppSidebar() {
             "w-full text-sidebar-muted-foreground hover:text-destructive hover:bg-destructive/10 border border-transparent hover:border-destructive/20",
             collapsed && "w-auto",
           )}
+          aria-label="Sign out"
         >
           <LogOut className="h-4 w-4" />
           {!collapsed && <span className="ml-2 font-medium">Odhlásiť sa</span>}

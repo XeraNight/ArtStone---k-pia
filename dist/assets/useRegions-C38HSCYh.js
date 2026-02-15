@@ -1,1 +1,0 @@
-import{u as s}from"./ThemeToggle-H5MkW5aa.js";import{u as t,s as u}from"./index-lYTtkRVl.js";import{demoRegions as n}from"./demoData-tljgfLqM.js";function f(){const{isDemo:r}=t();return s({queryKey:["regions",r],queryFn:async()=>{if(r)return n;const{data:o,error:e}=await u.from("regions").select("*").order("name");if(e)throw e;return o}})}export{f as u};
