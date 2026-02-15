@@ -397,7 +397,11 @@ export default function Salespeople() {
                       <span className="text-sm text-muted-foreground">Plnenie cieľa</span>
                       <span className="text-sm font-medium">{(person.stats as any)?.targetProgress || 0}%</span>
                     </div>
-                    <Progress value={(person.stats as any)?.targetProgress || 0} className="h-2" />
+                    <Progress 
+                      value={(person.stats as any)?.targetProgress || 0} 
+                      className="h-2" 
+                      aria-label={`Annual target progress for ${person.name}`}
+                    />
                   </div>
 
                   <div className="flex items-center justify-between mt-4">

@@ -345,6 +345,7 @@ export default function Inventory() {
                                   ? '[&>div]:bg-warning'
                                   : '[&>div]:bg-success'
                                 }`}
+                              aria-label={`Stock level for ${item.name}`}
                             />
                           </div>
                         </TableCell>
