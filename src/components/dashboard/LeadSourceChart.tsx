@@ -4,13 +4,13 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recha
 import { useLeadsBySource } from '@/hooks/useDashboardStats';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// Vintage color palette - harmonized warm earth tones
+// ArtStone color palette - Industrial Orange & Monochrome
 const COLORS = [
-  'hsl(15 50% 58%)',  // Warm terracotta 
-  'hsl(35 45% 55%)',  // Vintage tan/gold
-  'hsl(25 40% 52%)',  // Deep warm clay
-  'hsl(40 35% 58%)',  // Light warm sand
-  'hsl(20 45% 50%)',  // Rich earth brown
+  'hsl(28 100% 50%)',   // ArtStone Orange
+  'hsl(0 0% 80%)',      // Light Grey
+  'hsl(0 0% 40%)',      // Medium Grey
+  'hsl(0 0% 20%)',      // Dark Grey
+  'hsl(28 100% 65%)',   // Lighter Orange
 ];
 
 const sourceLabels: Record<string, string> = {
@@ -33,12 +33,12 @@ export const LeadSourceChart = memo(function LeadSourceChart() {
 
   if (isLoading) {
     return (
-      <Card className="vintage-card vintage-cracks">
+      <Card className="vintage-card">
         <CardHeader className="pb-3">
-          <CardTitle className="font-display text-lg text-[hsl(30,35%,25%)]">Zdroje leadov</CardTitle>
+          <CardTitle className="font-display text-lg text-muted-foreground">Zdroje leadov</CardTitle>
         </CardHeader>
         <CardContent>
-          <Skeleton className="h-[280px] bg-[hsl(35,20%,80%)]" />
+          <Skeleton className="h-[280px] bg-muted" />
         </CardContent>
       </Card>
     );

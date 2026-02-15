@@ -9,12 +9,12 @@ export const SalesFunnelChart = memo(function SalesFunnelChart() {
 
     if (isLoading) {
         return (
-            <Card className="vintage-card vintage-cracks">
+            <Card className="vintage-card">
                 <CardHeader className="pb-3">
                     <CardTitle className="font-display text-lg text-foreground">Sales Funnel</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <Skeleton className="h-[280px] bg-[hsl(35,20%,80%)]" />
+                    <Skeleton className="h-[280px] bg-muted" />
                 </CardContent>
             </Card>
         );
@@ -22,12 +22,12 @@ export const SalesFunnelChart = memo(function SalesFunnelChart() {
 
     if (!funnelData || funnelData.totalLeads === 0) {
         return (
-            <Card className="vintage-card vintage-cracks">
+            <Card className="vintage-card">
                 <CardHeader className="pb-3">
                     <CardTitle className="font-display text-lg text-foreground">Sales Funnel</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="h-[280px] flex items-center justify-center text-[hsl(30,25%,45%)]">
+                    <div className="h-[280px] flex items-center justify-center text-muted-foreground">
                         Žiadne dáta k dispozícii
                     </div>
                 </CardContent>
@@ -38,7 +38,7 @@ export const SalesFunnelChart = memo(function SalesFunnelChart() {
     const { stages, conversionRate } = funnelData;
 
     return (
-        <Card className="vintage-card vintage-cracks">
+        <Card className="vintage-card">
             <CardHeader className="pb-3 flex flex-row items-center justify-between">
                 <CardTitle className="font-display text-lg text-foreground">Sales Funnel</CardTitle>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -51,10 +51,11 @@ export const SalesFunnelChart = memo(function SalesFunnelChart() {
                     {stages.map((stage, index) => {
                         const maxWidth = 100;
                         const width = stage.percentage;
-                        const color = index === 0 ? 'hsl(217, 91%, 60%)' :
-                            index === 1 ? 'hsl(34, 89%, 55%)' :
-                                index === 2 ? 'hsl(25, 95%, 53%)' :
-                                    'hsl(142, 76%, 36%)';
+                        // ArtStone Orange Gradients
+                        const color = index === 0 ? 'hsl(28, 100%, 50%)' :  // Bright Orange
+                            index === 1 ? 'hsl(28, 90%, 45%)' :             // Slightly Darker
+                                index === 2 ? 'hsl(28, 80%, 40%)' :         // Darker Orange
+                                    'hsl(142, 76%, 36%)';                   // Green for Sales (Success)
 
                         return (
                             <div key={stage.name} className="space-y-1">

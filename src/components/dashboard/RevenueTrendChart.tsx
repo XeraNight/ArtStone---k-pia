@@ -19,12 +19,12 @@ export const RevenueTrendChart = memo(function RevenueTrendChart() {
 
     if (isLoading) {
         return (
-            <Card className="vintage-card vintage-cracks">
+            <Card className="vintage-card">
                 <CardHeader className="pb-3">
                     <CardTitle className="font-display text-lg text-foreground">Trend príjmov</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <Skeleton className="h-[280px] bg-[hsl(35,20%,80%)]" />
+                    <Skeleton className="h-[280px] bg-muted" />
                 </CardContent>
             </Card>
         );
@@ -32,12 +32,12 @@ export const RevenueTrendChart = memo(function RevenueTrendChart() {
 
     if (!revenueData || revenueData.length === 0) {
         return (
-            <Card className="vintage-card vintage-cracks">
+            <Card className="vintage-card">
                 <CardHeader className="pb-3">
                     <CardTitle className="font-display text-lg text-foreground">Trend príjmov</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="h-[280px] flex items-center justify-center text-[hsl(30,25%,45%)]">
+                    <div className="h-[280px] flex items-center justify-center text-muted-foreground">
                         Žiadne dáta k dispozícii
                     </div>
                 </CardContent>
@@ -46,7 +46,7 @@ export const RevenueTrendChart = memo(function RevenueTrendChart() {
     }
 
     return (
-        <Card className="vintage-card vintage-cracks">
+        <Card className="vintage-card">
             <CardHeader className="pb-3 flex flex-row items-center justify-between">
                 <CardTitle className="font-display text-lg text-foreground">Trend príjmov</CardTitle>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -64,18 +64,18 @@ export const RevenueTrendChart = memo(function RevenueTrendChart() {
                                     <stop offset="95%" stopColor="hsl(142, 76%, 36%)" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
-                            <CartesianGrid strokeDasharray="3 3" stroke="hsl(35, 25%, 75%)" opacity={0.5} />
+                            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.5} />
                             <XAxis
                                 dataKey="month"
-                                tick={{ fill: 'hsl(var(--foreground))', fontSize: 11 }}
-                                axisLine={{ stroke: 'hsl(35, 25%, 70%)' }}
+                                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+                                axisLine={{ stroke: 'hsl(var(--border))' }}
                                 angle={-45}
                                 textAnchor="end"
                                 height={60}
                             />
                             <YAxis
-                                tick={{ fill: 'hsl(var(--foreground))', fontSize: 12 }}
-                                axisLine={{ stroke: 'hsl(35, 25%, 70%)' }}
+                                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+                                axisLine={{ stroke: 'hsl(var(--border))' }}
                                 tickFormatter={(value) => `€${(value / 1000).toFixed(0)}k`}
                             />
                             <Tooltip
