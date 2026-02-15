@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Vintage Color Palette - Warm Beige & Brown Tones */
+    --background: 38 28% 82%;
+    /* #D4C4A8 - Main warm beige */
+    --foreground: 30 35% 25%;
+    /* Dark brown text */
+    --card: 40 25% 88%;
+    /* #E8DCCC - Light card background */
+    --card-foreground: 30 35% 25%;
+    --popover: 40 25% 90%;
+    --popover-foreground: 30 35% 25%;
+    --primary: 35 40% 55%;
+    /* #A89060 - Vintage gold/tan */
+    --primary-foreground: 40 25% 95%;
+    --secondary: 38 20% 75%;
+    /* #C9B896 - Medium beige */
+    --secondary-foreground: 30 35% 30%;
+    --muted: 35 18% 78%;
+    --muted-foreground: 30 25% 45%;
+    --accent: 35 40% 60%;
+    --accent-foreground: 30 35% 20%;
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 25% 70%;
+    /* Gentle border */
+    --input: 40 25% 85%;
+    --ring: 35 40% 55%;
+    --sidebar-background: 40 22% 85%;
+    /* Slightly darker sidebar */
+    --sidebar-foreground: 30 35% 25%;
+    --sidebar-primary: 35 40% 55%;
+    --sidebar-primary-foreground: 40 25% 95%;
+    --sidebar-accent: 38 28% 80%;
+    --sidebar-accent-foreground: 30 35% 25%;
+    --sidebar-border: 35 25% 75%;
+    --sidebar-ring: 35 40% 55%;
+    --sidebar-muted: 30 20% 50%;
+    --radius: 0.75rem;
+
+    /* Vintage-specific variables */
+    --vintage-paper: 38 28% 82%;
+    --vintage-dark-brown: 30 35% 25%;
+    --vintage-tan: 35 40% 55%;
+    --vintage-light-beige: 40 25% 88%;
+    --vintage-border: 35 30% 65%;
+    --vintage-shadow: 30 20% 40%;
+  }
+
+  .dark {
+    /* Vintage Dark Mode - Warm Dark Browns & Aged Paper - Enhanced Visibility */
+    --background: 25 20% 12%;
+    /* Deep warm brown background */
+    --foreground: 35 10% 80%;
+    /* Softer warm cream text at 80% */
+    --card: 28 18% 16%;
+    /* Dark card with warm undertone */
+    --card-foreground: 35 10% 80%;
+    /* Softer card text */
+    --popover: 28 18% 14%;
+    --popover-foreground: 35 10% 80%;
+    --primary: 35 45% 60%;
+    /* Even brighter vintage tan/gold for better visibility */
+    --primary-foreground: 35 15% 98%;
+    --secondary: 30 15% 22%;
+    /* Dark muted brown */
+    --secondary-foreground: 35 15% 85%;
+    --muted: 30 12% 20%;
+    --muted-foreground: 35 12% 65%;
+    /* Muted text at 65% */
+    --accent: 32 18% 24%;
+    --accent-foreground: 35 10% 80%;
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 15% 28%;
+    /* Slightly lighter borders */
+    --input: 30 15% 20%;
+    --ring: 35 45% 58%;
+    --sidebar-background: 25 18% 10%;
+    /* Darker sidebar */
+    --sidebar-foreground: 35 10% 80%;
+    /* Softer sidebar text */
+    --sidebar-primary: 35 45% 58%;
+    --sidebar-primary-foreground: 35 15% 95%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 35 10% 80%;
+    --sidebar-border: 30 15% 22%;
+    /* Lighter borders */
+    --sidebar-ring: 35 45% 58%;
+
+    /* Vintage-specific dark variables */
+    --vintage-paper: 25 20% 12%;
+    --vintage-dark-brown: 35 15% 92%;
+    --vintage-tan: 35 45% 58%;
+    --vintage-light-beige: 28 18% 16%;
+    --vintage-border: 30 15% 30%;
+    --vintage-shadow: 20 15% 5%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Vintage Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(40, 22%, 85%);
+    border-left: 1px solid hsl(35, 25%, 75%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(35, 40%, 55%) 0%, hsl(35, 35%, 45%) 100%);
+    border-radius: 6px;
+    border: 2px solid hsl(40, 22%, 85%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(35, 40%, 50%) 0%, hsl(35, 35%, 40%) 100%);
+  }
+
+  /* Vintage Text Selection */
+  ::selection {
+    background-color: hsl(35, 40%, 55%, 0.3);
+    color: hsl(30, 35%, 25%);
+  }
+
+  ::-moz-selection {
+    background-color: hsl(35, 40%, 55%, 0.3);
+    color: hsl(30, 35%, 25%);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Earthy Stone Background - Natural & Organic */
+  .vintage-paper-bg {
+    background-color: hsl(var(--vintage-paper));
+    background-image:
+      /* Organic noise texture */
+      repeating-linear-gradient(90deg,
+        transparent,
+        transparent 1px,
+        hsla(30, 20%, 45%, 0.02) 1px,
+        hsla(30, 20%, 45%, 0.02) 2px),
+      repeating-linear-gradient(0deg,
+        transparent,
+        transparent 1px,
+        hsla(35, 15%, 50%, 0.02) 1px,
+        hsla(35, 15%, 50%, 0.02) 2px),
+      /* Stone variations */
+      radial-gradient(ellipse at 25% 45%, hsla(35, 30%, 70%, 0.15) 0px, transparent 40%),
+      radial-gradient(ellipse at 75% 60%, hsla(30, 25%, 65%, 0.12) 0px, transparent 35%),
+      radial-gradient(ellipse at 50% 25%, hsla(38, 20%, 75%, 0.1) 0px, transparent 30%);
+  }
+
+  /* Earthy Card with Stone Texture */
+  .vintage-card {
+    background:
+      linear-gradient(135deg, hsl(var(--card)) 0%, hsl(40 23% 86%) 100%);
+    border: 2px solid hsl(var(--vintage-border));
+    /* Organic rounded corners - varied radii for natural feel */
+    border-radius: 16px 12px 18px 14px;
+    box-shadow:
+      /* Main shadow */
+      0 3px 12px -2px hsla(var(--vintage-shadow) / 0.18),
+      0 6px 20px -4px hsla(var(--vintage-shadow) / 0.12),
+      /* Inner highlight for carved effect */
+      inset 0 1px 0 0 hsla(40, 30%, 95%, 0.6),
+      inset -1px 0 0 0 hsla(35, 25%, 75%, 0.3),
+      /* Subtle depth */
+      0 1px 3px 0 hsla(var(--vintage-shadow) / 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .vintage-card:hover {
+    box-shadow:
+      0 6px 18px -2px hsla(var(--vintage-shadow) / 0.22),
+      0 10px 30px -4px hsla(var(--vintage-shadow) / 0.15),
+      inset 0 1px 0 0 hsla(40, 30%, 95%, 0.7),
+      inset -1px 0 0 0 hsla(35, 25%, 75%, 0.4),
+      0 2px 6px 0 hsla(var(--vintage-shadow) / 0.12);
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .vintage-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image:
+      /* Stone grain */
+      repeating-linear-gradient(90deg,
+        transparent,
+        transparent 3px,
+        hsla(30, 20%, 50%, 0.015) 3px,
+        hsla(30, 20%, 50%, 0.015) 6px),
+      repeating-linear-gradient(0deg,
+        transparent,
+        transparent 3px,
+        hsla(35, 15%, 55%, 0.015) 3px,
+        hsla(35, 15%, 55%, 0.015) 6px);
+    pointer-events: none;
+  }
+
+  /* Decorative corner chips for organic stone feel */
+  .vintage-card::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background:
+      radial-gradient(circle at 100% 0%, transparent 70%, hsl(var(--background)) 72%);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  /* Natural Stone Weathering (instead of cracks) */
+  .vintage-cracks {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vintage-cracks::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image:
+      /* Organic stone veining */
+      radial-gradient(ellipse at 20% 30%, transparent 30%, hsla(30, 20%, 35%, 0.04) 35%, transparent 40%),
+      radial-gradient(ellipse at 75% 65%, transparent 25%, hsla(35, 15%, 40%, 0.035) 30%, transparent 35%),
+      radial-gradient(ellipse at 50% 80%, transparent 20%, hsla(30, 25%, 38%, 0.03) 25%, transparent 30%);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* Decorative stone divider */
+  .stone-divider {
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(var(--border)) 10%,
+        hsl(var(--vintage-tan)) 50%,
+        hsl(var(--border)) 90%,
+        transparent 100%);
+    position: relative;
+    margin: 1.5rem 0;
+  }
+
+  .stone-divider::before,
+  .stone-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    box-shadow: 0 0 8px hsla(var(--primary) / 0.4);
+  }
+
+  .stone-divider::before {
+    left: 15%;
+  }
+
+  .stone-divider::after {
+    right: 15%;
+  }
+
+  /* Vintage Shadows */
+  .shadow-vintage {
+    box-shadow:
+      0 1px 3px 0 hsla(var(--vintage-shadow) / 0.12),
+      0 2px 8px -1px hsla(var(--vintage-shadow) / 0.08);
+  }
+
+  .shadow-vintage-lg {
+    box-shadow:
+      0 4px 12px -2px hsla(var(--vintage-shadow) / 0.15),
+      0 8px 24px -4px hsla(var(--vintage-shadow) / 0.1);
+  }
+
+  /* Legacy gradients - kept for compatibility */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(35 35% 50%) 100%);
+  }
+
+  .gradient-stone {
+    background: linear-gradient(180deg, hsl(40 25% 88%) 0%, hsl(38 22% 82%) 100%);
+  }
+
+  .dark .gradient-stone {
+    background: linear-gradient(180deg, hsl(30 15% 14%) 0%, hsl(30 15% 10%) 100%);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsla(var(--foreground) / 0.1);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px -5px hsla(var(--primary) / 0.2);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 15px hsla(var(--primary) / 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 25px hsla(var(--primary) / 0.5);
+    }
+  }
+
+  /* Vintage Glow Effects */
+  .vintage-glow-soft {
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.25),
+      0 0 40px hsla(var(--primary) / 0.15);
+  }
+
+  .vintage-glow-active {
+    box-shadow: 0 0 15px hsla(var(--primary) / 0.4),
+      0 0 30px hsla(var(--primary) / 0.2),
+      inset 0 0 10px hsla(var(--primary) / 0.1);
+  }
+
+  .dark .vintage-glow-active {
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.5),
+      0 0 40px hsla(var(--primary) / 0.25),
+      inset 0 0 15px hsla(var(--primary) / 0.15);
+  }
+
+  /* Number emphasis with elegant vintage serif styling */
+  .number-emphasis {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    /* Subtle carved stone effect */
+    text-shadow:
+      0 1px 0 hsla(40, 30%, 90%, 0.5),
+      0 2px 4px hsla(var(--foreground) / 0.06);
+    letter-spacing: -0.02em;
+  }
+
+  .dark .number-emphasis {
+    text-shadow:
+      0 1px 0 hsla(35, 20%, 20%, 0.3),
+      0 2px 4px hsla(0, 0%, 0%, 0.2),
+      0 0 8px hsla(var(--primary) / 0.1);
+  }
+
+  /* Icon with stone medallion background */
+  .stone-icon-bg {
+    position: relative;
+    background:
+      radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--primary)) 40%, transparent 70%),
+      conic-gradient(from 45deg,
+        hsla(var(--primary) / 0.15) 0deg,
+        hsla(var(--primary) / 0.25) 90deg,
+        hsla(var(--primary) / 0.15) 180deg,
+        hsla(var(--primary) / 0.25) 270deg,
+        hsla(var(--primary) / 0.15) 360deg);
+    border: 2px solid hsl(var(--border));
+    border-radius: 12px 10px 12px 10px;
+    box-shadow:
+      0 2px 6px hsla(var(--vintage-shadow) / 0.15),
+      inset 0 1px 0 hsla(40, 30%, 95%, 0.5),
+      inset 0 -1px 0 hsla(var(--vintage-shadow) / 0.1);
+  }
+
+  .dark .stone-icon-bg {
+    background:
+      radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--primary)) 35%, transparent 65%),
+      conic-gradient(from 45deg,
+        hsla(var(--primary) / 0.2) 0deg,
+        hsla(var(--primary) / 0.3) 90deg,
+        hsla(var(--primary) / 0.2) 180deg,
+        hsla(var(--primary) / 0.3) 270deg,
+        hsla(var(--primary) / 0.2) 360deg);
+    box-shadow:
+      0 2px 8px hsla(0, 0%, 0%, 0.3),
+      inset 0 1px 0 hsla(35, 20%, 30%, 0.3),
+      inset 0 -1px 0 hsla(0, 0%, 0%, 0.2);
+  }
+
+  /* Dark Mode Vintage Overrides - Earthy Stone Theme */
+  .dark .vintage-paper-bg {
+    background-color: hsl(var(--vintage-paper));
+    background-image:
+      /* Dark stone texture */
+      repeating-linear-gradient(90deg,
+        transparent,
+        transparent 1px,
+        hsla(35, 15%, 8%, 0.08) 1px,
+        hsla(35, 15%, 8%, 0.08) 2px),
+      repeating-linear-gradient(0deg,
+        transparent,
+        transparent 1px,
+        hsla(30, 12%, 10%, 0.06) 1px,
+        hsla(30, 12%, 10%, 0.06) 2px),
+      /* Dark stone variations */
+      radial-gradient(ellipse at 30% 40%, hsla(30, 20%, 18%, 0.25) 0px, transparent 35%),
+      radial-gradient(ellipse at 70% 65%, hsla(28, 18%, 20%, 0.2) 0px, transparent 40%),
+      radial-gradient(ellipse at 45% 25%, hsla(32, 15%, 16%, 0.18) 0px, transparent 30%);
+  }
+
+  .dark .vintage-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(28 16% 14%) 100%);
+    border: 1.5px solid hsl(var(--vintage-border));
+    box-shadow:
+      0 2px 8px -2px hsla(0, 0%, 0%, 0.3),
+      0 4px 16px -4px hsla(0, 0%, 0%, 0.2),
+      inset 0 1px 0 0 hsla(35, 20%, 25%, 0.15);
+  }
+
+  .dark .vintage-card:hover {
+    box-shadow:
+      0 4px 12px -2px hsla(0, 0%, 0%, 0.4),
+      0 8px 24px -4px hsla(0, 0%, 0%, 0.3),
+      inset 0 1px 0 0 hsla(35, 20%, 25%, 0.2);
+  }
+
+  .dark .vintage-card::before {
+    background-image:
+      /* Dark stone grain */
+      repeating-linear-gradient(90deg,
+        transparent,
+        transparent 3px,
+        hsla(35, 20%, 90%, 0.01) 3px,
+        hsla(35, 20%, 90%, 0.01) 6px),
+      repeating-linear-gradient(0deg,
+        transparent,
+        transparent 3px,
+        hsla(30, 15%, 85%, 0.01) 3px,
+        hsla(30, 15%, 85%, 0.01) 6px);
+  }
+
+  .dark .vintage-cracks::after {
+    background-image:
+      /* Dark stone veining */
+      radial-gradient(ellipse at 20% 30%, transparent 30%, hsla(35, 20%, 80%, 0.03) 35%, transparent 40%),
+      radial-gradient(ellipse at 75% 65%, transparent 25%, hsla(30, 15%, 75%, 0.025) 30%, transparent 35%),
+      radial-gradient(ellipse at 50% 80%, transparent 20%, hsla(32, 18%, 78%, 0.02) 25%, transparent 30%);
+    opacity: 0.35;
+  }
+
+  .dark .gradient-stone {
+    background: linear-gradient(180deg, hsl(28 18% 16%) 0%, hsl(25 20% 12%) 100%);
+  }
+
+  /* Dark Mode Scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(25, 18%, 10%);
+    border-left: 1px solid hsl(30, 15%, 20%);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(35, 40%, 45%) 0%, hsl(35, 35%, 35%) 100%);
+    border: 2px solid hsl(25, 18%, 10%);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(35, 40%, 50%) 0%, hsl(35, 35%, 40%) 100%);
+  }
+
+  /* Dark Mode Text Selection */
+  .dark ::selection {
+    background-color: hsl(35, 40%, 40%, 0.4);
+    color: hsl(35, 15%, 85%);
+  }
+
+  .dark ::-moz-selection {
+    background-color: hsl(35, 40%, 40%, 0.4);
+    color: hsl(35, 15%, 85%);
+  }
+}
